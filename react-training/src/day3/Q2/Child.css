@@ -1,0 +1,9 @@
+.theme-light{
+    color:rgb(27, 25, 25);
+    background-color: rgb(237, 240, 244);
+}
+
+.theme-dark{
+    color:white;
+    background-color: black;
+}
