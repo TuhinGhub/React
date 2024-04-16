@@ -26,4 +26,4 @@ const withLogger = (WrappedComponent) => {
   return NewComponent;
 };
 
-export default withLogger;
+ export default withLogger;

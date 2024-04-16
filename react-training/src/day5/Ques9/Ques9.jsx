@@ -10,9 +10,10 @@ const Ques9 = () => {
   return (
     <>
       {/* <ApolloProvider client2={client2}> */}
-        <BigCode />
+      <BigCode />
       {/* </ApolloProvider> */}
     </>
   );
 };
-export default Ques9;
+   export default Ques9;
+ 

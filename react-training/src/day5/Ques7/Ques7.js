@@ -40,4 +40,4 @@ const Ques7 = () => {
   );
 };
 
-export default Ques7;
+ export default Ques7;

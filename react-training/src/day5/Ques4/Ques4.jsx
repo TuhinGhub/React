@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Pagination from '@mui/material/Pagination';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import React, { useState, useEffect } from "react";
+import Pagination from "@mui/material/Pagination";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const Ques4 = () => {
   const [data, setData] = useState([]);
@@ -12,17 +12,19 @@ const Ques4 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/todos?_page=${page}&_limit=${itemsPerPage}`);
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/todos?_page=${page}&_limit=${itemsPerPage}`
+        );
         const jsonData = await response.json();
         setData(jsonData);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, [page]); 
+  }, [page]);
 
   const handleChangePage = (event, value) => {
     setPage(value);
@@ -30,7 +32,14 @@ const Ques4 = () => {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         <CircularProgress />
       </Box>
     );
@@ -40,17 +49,19 @@ const Ques4 = () => {
     <div>
       <h1>Data from Public API</h1>
       <ul>
-        {data.map(item => (
+        {data.map((item) => (
           <li key={item.id}>{item.title}</li>
         ))}
       </ul>
-    
-      <Pagination count={10}
-       page={page}
-       onChange={handleChangePage} variant="outlined" />
 
+      <Pagination
+        count={10}
+        page={page}
+        onChange={handleChangePage}
+        variant="outlined" 
+      />
     </div>
   );
 };
 
-export default Ques4;
+ export default Ques4;

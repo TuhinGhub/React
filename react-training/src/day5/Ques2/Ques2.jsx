@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Ques2 = () => {
   const [data, setData] = useState([]);
@@ -6,22 +6,24 @@ const Ques2 = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/todos/");
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/todos/"
+        );
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
   return (
     <div>
       <h1>Data from Public API</h1>
       <ul>
-        {data.map(item => (
+        {data.map((item) => (
           <li key={item.id}>{item.title}</li>
         ))}
       </ul>
@@ -29,4 +31,4 @@ const Ques2 = () => {
   );
 };
 
-export default Ques2;
+ export default Ques2;

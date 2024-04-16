@@ -2,9 +2,7 @@ import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import React, { useState } from "react";
 
-
-
-const BigCode=()=> {
+const BigCode = () => {
   const [pageRange, setPageRange] = useState({
     currentPage: 1,
     itemsPerPage: 10,
@@ -16,16 +14,16 @@ const BigCode=()=> {
         name
         phone
         currency
-      }  
+      }
     }
   `;
 
   const { loading, error, data } = useQuery(GET_DATA);
 
   if (loading) return <h1>Loading...</h1>;
-  if (error) return <p>Error: {error.message}</p>; 
-  console.log(data,"4444444444444444");
-  console.log(error,"88888");
+  if (error) return <p>Error: {error.message}</p>;
+  console.log(data, "4444444444444444");
+  console.log(error, "88888");
 
   // Calculate pagination
   const startIndex = (pageRange.currentPage - 1) * pageRange.itemsPerPage;
@@ -38,17 +36,22 @@ const BigCode=()=> {
     <div>
       <h1>Question - 9</h1>
       <ul className="country-List">
-        {paginatedData.map((country, index) => ( 
-          <li className="country-item" key={index}>Country Name: {country.name} Phone Number: {country.phone} Currency: {country.currency}</li>
+        {paginatedData.map((country, index) => (
+          <li className="country-item" key={index}>
+            Country Name: {country.name} Phone Number: {country.phone} Currency:{" "}
+            {country.currency}
+          </li>
         ))}
       </ul>
-      
-      <div style={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent:"center"
-      }}>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         {pageRange.currentPage > 1 && (
           <button
             style={{
@@ -56,7 +59,12 @@ const BigCode=()=> {
               margin: "10px",
               borderRadius: "10px",
             }}
-            onClick={() => setPageRange({ ...pageRange, currentPage: pageRange.currentPage - 1 })}
+            onClick={() =>
+              setPageRange({
+                ...pageRange,
+                currentPage: pageRange.currentPage - 1,
+              })
+            }
           >
             Prev Page
           </button>
@@ -71,7 +79,12 @@ const BigCode=()=> {
               margin: "10px",
               borderRadius: "10px",
             }}
-            onClick={() => setPageRange({ ...pageRange, currentPage: pageRange.currentPage + 1 })}
+            onClick={() =>
+              setPageRange({
+                ...pageRange,
+                currentPage: pageRange.currentPage + 1,
+              })
+            }
           >
             Next Page
           </button>
@@ -79,6 +92,6 @@ const BigCode=()=> {
       </div>
     </div>
   );
-}
+};
 
 export default BigCode;
