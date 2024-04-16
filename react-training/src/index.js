@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from "react-router-dom";
 import './index.css';
 import Greeting from './day1/Greeting';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +11,12 @@ import TaskList from './day1/TaskList';
 import Button from './day1/Button';
 import Counter2 from './day2/Counter2';
 import PersonForm from './day2/PersonForm';
+import App from './App';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import client from './day5/GraphQL/client';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +38,14 @@ root.render(
 
    <Counter2 />
    <PersonForm />
+ {/* <BrowserRouter> */}
+ <ApolloProvider client={client}>
+   <App/>
+</ApolloProvider>
+
+{/* </BrowserRouter>   */}
+ 
+
    
   </React.StrictMode>
 );
