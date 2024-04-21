@@ -10,6 +10,7 @@ import TaskList from './day1/TaskList';
 import Button from './day1/Button';
 import Counter2 from './day2/Counter2';
 import PersonForm from './day2/PersonForm';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +32,7 @@ root.render(
 
    <Counter2 />
    <PersonForm />
+   <App/>
    
   </React.StrictMode>
 );
