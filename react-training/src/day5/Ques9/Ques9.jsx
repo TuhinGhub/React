@@ -9,9 +9,7 @@ const Ques9 = () => {
   });
   return (
     <>
-      {/* <ApolloProvider client2={client2}> */}
       <BigCode />
-      {/* </ApolloProvider> */}
     </>
   );
 };

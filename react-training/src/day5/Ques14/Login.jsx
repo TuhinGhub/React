@@ -30,7 +30,7 @@ const Login = () => {
             setPassword(e.target.value);
           }}
         />
-        <button onClick={login}>loggin</button>
+        <button onClick={login}>login</button>
       </div>
     </>
   );

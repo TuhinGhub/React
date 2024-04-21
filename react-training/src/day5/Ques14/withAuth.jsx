@@ -8,7 +8,7 @@ const withAuth = (WrappedComponent) => {
 
     if (isAuthenticated !== "true") {
       navigate("/login");
-      return null; // Returning null to avoid rendering the WrappedComponent
+      return null; 
     }
 
     return <WrappedComponent {...props} isAuthenticated={isAuthenticated} />;

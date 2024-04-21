@@ -10,7 +10,7 @@ const Ques5 = () => {
         axios
           .get("https://jsonplaceholder.typicode.com/todos/")
           .then((response) => {
-            setData(response.data); //different from data in usestate
+            setData(response.data); 
           });
       } catch (error) {
         console.error("Error fetching data:", error);

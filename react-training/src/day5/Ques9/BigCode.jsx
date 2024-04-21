@@ -25,7 +25,7 @@ const BigCode = () => {
   console.log(data, "4444444444444444");
   console.log(error, "88888");
 
-  // Calculate pagination
+  
   const startIndex = (pageRange.currentPage - 1) * pageRange.itemsPerPage;
   const endIndex = startIndex + pageRange.itemsPerPage;
   const paginatedData = data.countries.slice(startIndex, endIndex);
